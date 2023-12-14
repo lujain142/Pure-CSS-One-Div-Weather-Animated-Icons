@@ -1,0 +1,687 @@
+/* SUNNY */
+.sunny { 
+	animation: sunny 15s linear infinite;
+	background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
+	height: 140px;
+	width: 20px; 
+	margin-left: -15px;
+	position: absolute;
+	left: 90px;  
+	top: 20px;
+}
+.sunny:before {
+	background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+	content: ''; 
+	height: 140px; 
+	width: 20px;
+	opacity: 1; 
+	position: absolute;
+	bottom: 0px;
+	left: 0px; 
+	transform: rotate(90deg);
+}
+.sunny:after {
+	background: #FFEE44; 
+	border-radius: 50%; 
+	box-shadow: rgba(255,255,0,0.2) 0 0 0 15px;
+	content: '';  
+	height: 80px;
+	width: 80px;  
+	position: absolute; 
+	left: -30px; 
+	top: 30px;
+}
+@keyframes sunny { 
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* الشرح */
+/* 1. الجزء الأول (.sunny):
+   - يحدد الكلاس ".sunny" الذي يتم تطبيق الأنميشن عليه.
+   - يحدد خاصية الأنميشن باستخدام "animation" ويسمى "sunny"، ويدوم لمدة 15 ثانية بسرعة خطية ومتكررة بشكل لا نهائي.
+   - يحدد خلفية العنصر باستخدام خاصية "background" وهي خلفية تتكون من تدرج لوني يمتد من الأبيض شفاف إلى الأبيض الغامق ومرة أخرى إلى الأبيض شفاف.
+   - يحدد ارتفاع العنصر بـ 140 بكسل وعرضه بـ 20 بكسل.
+   - يحدد تحريك العنصر إلى اليسار بمقدار 15 بكسل وتحديد موقعه بوضعه بشكل مطلق بالنسبة للعنصر الأب وتحديد موقعه بالنسبة للعناصر الأخرى بالنسبة لأعلى يساوي 20 بكسل ولليسار يساوي 90 بكسل.
+
+2. الجزء الثاني (.sunny:before):
+   - يضيف عنصرًا نائبًا (pseudo-element) قبل العنصر الذي يحتوي على الكلاس ".sunny".
+   - يحدد خلفية العنصر باستخدام نفس تدرج الألوان المستخدم في الجزء الأول.
+   - يحدد ارتفاع العنصر بـ 140 بكسل وعرضه بـ 20 بكسل.
+   - يحدد موقع العنصر بشكل مطلق بالنسبة لأسفل بوضعه بشكل مطلق بالنسبة للعنصر الأب ولليسار بوضعه بشكل مطلق بالنسبة للعنصر الأب ويقوم بتدويره بزاوية 90 درجة.
+
+3. الجزء الثالث (.sunny:after):
+   - يضيف عنصرًا نائبًا (pseudo-element) بعد العنصر الذي يحتوي على الكلاس ".sunny".
+   - يحدد خلفية العنصر بلون أصفر مشع (#FFEE44).
+   - يحدد شكل العنصر بشكل دائري باستخدام الخاصية "border-radius".
+   - يضيف تأثير الظل باستخدام خاصية "box-shadow"، حيث يكون الظل بلون أصفر فاتح ويحيط بالعنصر بنصف قطره 15 بكسل.
+   - يحدد ارتفاع العنصر بـ 80 بكسل وعرضه بـ 80 بكسل.
+   - يحدد موقع العنصر بوضعه بالنسبة لليسار بوضعه بمقدار قدره -30 بكسل وبالنسبة لأعلى بوضعه بمقدار 30 بكسل.
+
+4. @keyframes sunny:
+   - يحدد الأنميشن الذي يتم تطبيقه على الكلاس ".sunny".
+   - يحتوي على مفتاحين رئيسيين: 0% و 100%.
+   - في البداية (0%)، يحدد تدوير العنصر بزاوية 0 درجة.
+   - في النهاية (100%)، يحدد تدوير العنصر بزاوية 360 درجة، مما يخلق حركة دوران للشمس.
+ */
+
+
+
+
+
+/* CLOUDY */
+.cloudy {
+	animation: cloudy 5s ease-in-out infinite;
+	background: #FFFFFF;
+	border-radius: 50%;
+	box-shadow: 
+		#FFFFFF 65px -15px 0 -5px, 
+		#FFFFFF 25px -25px, 
+		#FFFFFF 30px 10px, 
+		#FFFFFF 60px 15px 0 -10px, 
+		#FFFFFF 85px 5px 0 -5px;
+	height: 50px;
+	width: 50px; 
+	margin-left: -60px;
+	position: absolute;
+	left: 255px;
+	top: 70px; 
+}
+.cloudy:after {
+	animation: cloudy_shadow 5s ease-in-out infinite;
+	background: #000000;
+	border-radius: 50%;
+	content: '';
+	height: 15px;
+	width: 120px;
+	opacity: 0.2;
+	position: absolute;
+	left: 5px; 
+	bottom: -60px;
+  transform: scale(1);
+}
+@keyframes cloudy {
+	50% { transform: translateY(-20px); }
+}
+@keyframes cloudy_shadow {
+	50% { transform: translateY(20px) scale(.7); opacity:.05; }
+}
+/* الشرح */
+/* 1. الجزء الأول (.cloudy):
+   - يحدد الكلاس ".cloudy" الذي يتم تطبيق الأنميشن عليه.
+   - يحدد خاصية الأنميشن باستخدام "animation" ويسمى "cloudy"، ويدوم لمدة 5 ثوانٍ بسرعة "ease-in-out" ومتكررة بشكل لا نهائي.
+   - يحدد خلفية العنصر باللون الأبيض (#FFFFFF).
+   - يحدد شكل العنصر بشكل دائري باستخدام الخاصية "border-radius".
+   - يضيف تأثير الظل باستخدام خاصية "box-shadow"، حيث يكون الظل بلون أبيض وبزوايا مختلفة ومواقع مختلفة لإعطاء تأثير السحابة.
+   - يحدد ارتفاع العنصر بـ 50 بكسل وعرضه بـ 50 بكسل.
+   - يحدد تحريك العنصر إلى اليسار بمقدار 60 بكسل وتحديد موقعه بوضعه بشكل مطلق بالنسبة للعنصر الأب وتحديد موقعه بالنسبة للعناصر الأخرى بالنسبة لأعلى يساوي 70 بكسل ولليسار يساوي 255 بكسل.
+
+2. الجزء الثاني (.cloudy:after):
+   - يضيف عنصرًا نائبًا (pseudo-element) بعد العنصر الذي يحتوي على الكلاس ".cloudy".
+   - يحدد خاصية الأنميشن باستخدام "animation" ويسمى "cloudy_shadow"، ويدوم لمدة 5 ثوانٍ بسرعة "ease-in-out" ومتكررة بشكل لا نهائي.
+   - يحدد خلفية العنصر باللون الأسود (#000000).
+   - يحدد شكل العنصر بشكل دائري باستخدام الخاصية "border-radius".
+   - يضيف خاصية "content" بقيمة فارغة للعنصر.
+   - يحدد ارتفاع العنصر بـ 15 بكسل وعرضه بـ 120 بكسل.
+   - يحدد شفافية العنصر بقيمة 0.2.
+   - يحدد موقع العنصر بوضعه بالنسبة لليسار بوضعه بمقدار 5 بكسل وبالنسبة لأسفل بوضعه بمقدار -60 بكسل.
+   - يحدد تحجيم العنصر باستخدام الخاصية "transform" ويتم تعيينها لقيمة "scale(1)".
+
+3. @keyframes cloudy:
+   - يحدد الأنميشن الذي يتم تطبيقه على الكلاس ".cloudy".
+   - يحتوي على مفتاحين رئيسيين:- 50%: يحدد التحول الذي يحدث في العنصر عند الوصول إلى نصف مدة الأنميشن. في هذه الحالة، يتم تحريك العنصر باتجاه الأعلى بمقدار 20 بكسل باستخدام الخاصية "transform: translateY(-20px)".
+
+4. @keyframes cloudy_shadow:
+   - يحدد الأنميشن الذي يتم تطبيقه على العنصر النائب ":after" من الكلاس ".cloudy".
+   - يحتوي على مفتاحين رئيسيين:
+   - 50%: يحدد التحول الذي يحدث في العنصر النائب عند الوصول إلى نصف مدة الأنميشن. في هذه الحالة، يتم تحريك العنصر النائب باتجاه الأسفل بمقدار 20 بكسل وتحجيمه بواسطة الخاصية "transform: translateY(20px) scale(.7)" وتقليل شفافيته بواسطة الخاصية "opacity" لتصبح 0.05. */
+
+
+/* RAINY */
+.rainy {
+	animation: rainy 5s ease-in-out infinite 1s;
+	background: #CCCCCC; 
+	border-radius: 50%;
+	box-shadow: 
+		#CCCCCC 65px -15px 0 -5px, 
+		#CCCCCC 25px -25px, 
+		#CCCCCC 30px 10px, 
+		#CCCCCC 60px 15px 0 -10px, 
+		#CCCCCC 85px 5px 0 -5px;
+	display: block;
+	height: 50px;
+	width: 50px;
+	margin-left: -60px;
+	position: absolute;
+	left: 427px;
+	top: 70px;
+}
+.rainy:after {
+	animation: rainy_shadow 5s ease-in-out infinite 1s;
+	background: #000000;
+	border-radius: 50%;
+	content: '';
+	height: 15px;
+	width: 120px;
+	opacity: 0.2;
+	position: absolute;
+	left: 5px; 
+	bottom: -60px;
+	transform: scale(1);
+}
+.rainy:before {
+	animation: rainy_rain .7s infinite linear;
+	content: '';
+	background: #CCCCCC;
+	border-radius: 50%;
+	display: block;
+	height: 6px;
+	width: 3px;
+	opacity: 0.3;
+	transform: scale(.9);
+}
+@keyframes rainy {
+	50% { transform: translateY(-20px); }
+}
+@keyframes rainy_shadow {
+	50% { transform: translateY(20px) scale(.7); opacity: 0.05; }
+}
+@keyframes rainy_rain {
+	0% {  
+		box-shadow: 
+			rgba(0,0,0,0) 30px 30px, 
+			rgba(0,0,0,0) 40px 40px,  
+			#000 50px 75px, 
+			#000 55px 50px, 
+			#000 70px 100px, 
+			#000 80px 95px, 
+			#000 110px 45px, 
+			#000 90px 35px; 
+	}
+	25% {  
+	  	box-shadow: 
+			#000 30px 45px,
+			#000 40px 60px,
+			#000 50px 90px,
+			#000 55px 65px,
+			rgba(0,0,0,0) 70px 120px,
+			rgba(0,0,0,0) 80px 120px,
+			#000 110px 70px,
+			#000 90px 60px;
+	}
+	26% {  
+		box-shadow:
+			#000 30px 45px,
+			#000 40px 60px,
+			#000 50px 90px,
+			#000 55px 65px,
+			rgba(0,0,0,0) 70px 40px,
+			rgba(0,0,0,0) 80px 20px,
+			#000 110px 70px,
+			#000 90px 60px; 
+	}
+	50% { 
+		box-shadow:
+			#000 30px 70px,
+			#000 40px 80px,
+			rgba(0,0,0,0) 50px 100px,
+			#000 55px 80px,
+			#000 70px 60px,
+			#000 80px 45px,
+			#000 110px 95px,
+			#000 90px 85px;
+	}
+	51% {
+		box-shadow:
+			#000 30px 70px,
+			#000 40px 80px,
+			rgba(0,0,0,0) 50px 45px,
+			#000 55px 80px,
+			#000 70px 60px,
+			#000 80px 45px,
+			#000 110px 95px,
+			#000 90px 85px;
+	}
+	75% {
+		box-shadow:
+			#000 30px 95px,
+			#000 40px 100px,
+			#000 50px 60px,
+			rgba(0,0,0,0) 55px 95px,
+			#000 70px 80px,
+			#000 80px 70px,
+			rgba(0,0,0,0) 110px 120px,
+			rgba(0,0,0,0) 90px 110px;
+	}
+	76% {
+		box-shadow:
+			#000 30px 95px,
+			#000 40px 100px,
+			#000 50px 60px,
+			rgba(0,0,0,0) 55px 35px,
+			#000 70px 80px,
+			#000 80px 70px,
+			rgba(0,0,0,0) 110px 25px,
+			rgba(0,0,0,0) 90px 15px;
+	}
+	100% {
+		box-shadow:
+			rgba(0,0,0,0) 30px 120px,
+			rgba(0,0,0,0) 40px 120px,
+			#000 50px 75px,
+			#000 55px 50px,
+			#000 70px 100px,
+			#000 80px 95px,
+			#000 110px 45px,
+			#000 90px 35px;
+	}
+}
+/* الشرح */
+
+/* هذا الكود هو مجرد مجموعة من قواعد CSS تستخدم لإنشاء تأثير المطر في صورة محاكاة على الواجهة. وهو يعرض عنصرًا بشكل دائري (حيث يكون لون الخلفية رمادي فاتح) يتحرك بشكل عمودي لأعلى ولأسفل لتمثيل قطرات المطر.
+
+الشيفرة تعتمد على استخدام الـ keyframes لتعريف الحركة المستخدمة في الأنيميشن. تم تعريف ثلاثة keyframes للحركات المختلفة المستخدمة:
+
+1. keyframe "rainy": يتم تحريك العنصر بنسبة 50٪ من خلال تغيير خاصية الترجمة العمودية translateY.
+2. keyframe "rainy_shadow": يتم تحريك العنصر الفرعي (الظل) بنسبة 50٪ باستخدام تغيير خاصية الترجمة العمودية translateY وتغيير حجم العنصر بواسطة تغيير خاصية التحويل scale.
+3. keyframe "rainy_rain": يتم تغيير خاصية box-shadow لخلق تأثير حبات المطر المتساقطة بأشكال ومواقع عشوائية.
+
+بالإضافة إلى الـ keyframes، يتم تعريف قاعدة أخرى لكلا العنصرين الفرعيين ".rainy:after" و ".rainy:before" لتعيين الأنميشن والأنميشن الظل لكل منهما على التوالي. */
+
+
+/* RAINBOW */
+.rainbow {
+	animation: rainbow 5s ease-in-out infinite;
+	border-radius: 170px 0 0 0;
+	box-shadow: 
+		#FB323C -2px -2px 0 1px,
+		#F99716 -4px -4px 0 3px,
+		#FEE124 -6px -6px 0 5px,
+		#AFDF2E -8px -8px 0 7px,
+		#6AD7F8 -10px -10px 0 9px,
+		#60B1F5 -12px -12px 0 11px,
+		#A3459B -14px -14px 0 13px;
+	height: 70px;
+	width: 70px;
+	margin-left: -40px;
+	position: absolute;
+	left: 610px;
+	top: 71px;
+  	transform: rotate(40deg);
+}
+.rainbow:after {
+	animation: rainbow_shadow 5s ease-in-out infinite;
+	background: #000000;
+	border-radius: 50%;
+	content: '';
+	opacity: 0.2;
+	height: 15px;
+	width: 120px;
+	position: absolute;
+	bottom: -23px; 
+	left: 17px;
+  	transform: rotate(-40deg);
+  	transform-origin: 50% 50%;
+}
+@keyframes rainbow {
+	50% { transform: rotate(50deg); }
+}
+@keyframes rainbow_shadow {
+	50% { transform:  rotate(-50deg) translate(10px) scale(.7); opacity: 0.05; }
+}
+
+/* STARRY */
+.starry {
+  	animation: starry_star 5s ease-in-out infinite;
+	background: #fff;
+	border-radius: 50%;  
+	box-shadow:  
+      	#FFFFFF 26px 7px 0 -1px, 
+      	rgba(255,255,255,0.1) -36px -19px 0 -1px, 
+      	rgba(255,255,255,0.1) -51px -34px 0 -1px,
+      	#FFFFFF -52px -62px 0 -1px, 
+      	#FFFFFF 14px -37px, 
+      	rgba(255,255,255,0.1) 41px -19px,  
+      	#FFFFFF 34px -50px,
+      	rgba(255,255,255,0.1) 14px -71px 0 -1px,
+      	#FFFFFF 64px -21px 0 -1px, 
+      	rgba(255,255,255,0.1) 32px -85px 0 -1px,
+      	#FFFFFF 64px -90px,
+      	rgba(255,255,255,0.1) 60px -67px 0 -1px,  
+      	#FFFFFF 34px -127px,
+      	rgba(255,255,255,0.1) -26px -103px 0 -1px;
+	height: 4px;
+	width: 4px; 
+  	margin-left: -10px;
+	opacity: 1;
+	position: absolute;
+  	left: 777px; 
+  	top: 150px;
+}
+.starry:after { 
+	animation: starry 5s ease-in-out infinite;
+	border-radius: 50%;
+	box-shadow: #FFFFFF -25px 0;
+	content: '';
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: -106px; 
+	transform: rotate(-5deg);
+	transform-origin: 0 50%;
+}
+
+@keyframes starry {
+	50% { transform: rotate(10deg); }
+}
+@keyframes starry_star {
+  50% { 
+	box-shadow:  
+		rgba(255,255,255,0.1) 26px 7px 0 -1px, 
+      	#FFFFFF -36px -19px 0 -1px, 
+      	#FFFFFF -51px -34px 0 -1px,
+      	rgba(255,255,255,0.1) -52px -62px 0 -1px, 
+      	rgba(255,255,255,0.1) 14px -37px,
+      	#FFFFFF 41px -19px,   
+      	rgba(255,255,255,0.1) 34px -50px,
+      	#FFFFFF 14px -71px 0 -1px,
+      	rgba(255,255,255,0.1) 64px -21px 0 -1px, 
+      	#FFFFFF 32px -85px 0 -1px,
+      	rgba(255,255,255,0.1) 64px -90px,
+      	#FFFFFF 60px -67px 0 -1px,  
+      	rgba(255,255,255,0.1) 34px -127px,
+      	#FFFFFF -26px -103px 0 -1px;
+	}
+}
+/* الشرح */
+/* الكود المعروض هو مجموعة من قواعد CSS التي تستخدم لإنشاء تأثيرين مختلفين. الأول هو تأثير "المطر" والثاني هو تأثير "النجوم".
+
+تأثير المطر:
+- الكلاس ".rainbow" يعمل على إنشاء عنصر بشكل دائري يشبه قوس قزح.
+- تم تعريف الأنيميشن "rainbow" باستخدام keyframes، حيث يتم تحريك العنصر بزاوية محددة.
+- تم تعريف العنصر الفرعي ".rainbow:after" لإنشاء ظل للعنصر الرئيسي.
+- الأنيميشن "rainbow_shadow" يتحرك بشكل مستقل عن العنصر الرئيسي ويغير حجمه وشفافيته.
+
+تأثير النجوم:
+- الكلاس ".starry" ينشئ عنصرًا بشكل دائري يشبه نجمة.
+- تم تعريف الأنيميشن "starry_star" باستخدام keyframes، حيث يتم تغيير شكل النجمة بين حالتين.
+- تم تعريف العنصر الفرعي ".starry:after" لإنشاء نجمة ثانوية تظهر فوق النجمة الرئيسية.
+ */
+/* STORMY */
+.stormy {
+	animation: stormy 5s ease-in-out infinite;
+	background: #222222;
+	border-radius: 50%;
+	box-shadow: 
+		#222222 65px -15px 0 -5px, 
+		#222222 25px -25px, 
+		#222222 30px 10px, 
+		#222222 60px 15px 0 -10px, 
+		#222222 85px 5px 0 -5px;
+	height: 50px;  
+	width: 50px; 
+	margin-left: -70px; 
+	position: absolute;
+	left: 947px; 
+	top: 70px; 
+}
+.stormy:after {
+	animation: stormy_shadow 5s ease-in-out infinite;
+	background: #000;
+	border-radius: 50%;
+	content: '';
+	height: 15px; 
+	width: 120px; 
+	opacity: 0.2;
+	position: absolute;
+	left: 5px; 
+	bottom: -60px;
+	transform: scale(1);
+}
+.stormy:before {
+	animation: stormy_thunder 2s steps(1, end) infinite; 
+	border-left: 0px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 43px solid yellow; 
+	box-shadow: yellow -7px -32px;
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+	position: absolute;
+	left: 57px;
+	top: 70px;
+	transform: rotate(14deg);
+	transform-origin: 50% -60px;
+}
+@keyframes stormy {
+	50% { transform: translateY(-20px); } 
+}  
+@keyframes stormy_shadow {
+	50% { transform: translateY(20px) scale(.7); opacity: 0.05; }
+}
+@keyframes stormy_thunder {
+	0%  { transform: rotate(20deg); opacity:1; }
+	5%  { transform: rotate(-34deg); opacity:1; }
+	10% { transform: rotate(0deg); opacity:1; }
+	15% { transform: rotate(-34deg); opacity:0; }
+}
+
+/* SNOWY */
+.snowy {
+	animation: snowy 5s ease-in-out infinite 1s;
+	background: #FFFFFF; 
+	border-radius: 50%;
+	box-shadow: 
+		#FFFFFF 65px -15px 0 -5px, 
+		#FFFFFF 25px -25px, 
+		#FFFFFF 30px 10px, 
+		#FFFFFF 60px 15px 0 -10px, 
+		#FFFFFF 85px 5px 0 -5px;
+	display: block;
+	height: 50px;
+	width: 50px;
+	margin-left: -60px;
+	position: absolute;
+	left: 1112px;
+	top: 70px;
+}
+.snowy:after {
+	animation: snowy_shadow 5s ease-in-out infinite 1s;
+	background: #000000;
+	border-radius: 50%;
+	content: '';
+	height: 15px;
+	width: 120px;
+	opacity: 0.2;
+	position: absolute;
+	left: 8px;
+	bottom: -60px;
+	transform: scale(1);
+}
+.snowy:before {
+	animation: snowy_snow 2s infinite linear;
+	content: '';
+	border-radius: 50%;
+	display: block;
+	height: 7px;
+	width: 7px;
+	opacity: 0.8;
+	transform: scale(.9);
+}
+@keyframes snowy {
+	50% { transform: translateY(-20px); }
+}
+@keyframes snowy_shadow {
+	50% { transform: translateY(20px) scale(.7); opacity: 0.05; }
+}
+@keyframes snowy_snow {
+	0% {  
+		box-shadow: 
+			rgba(238,238,238,0) 30px 30px, 
+			rgba(238,238,238,0) 40px 40px,  
+			#EEEEEE 50px 75px, 
+			#EEEEEE 55px 50px, 
+			#EEEEEE 70px 100px, 
+			#EEEEEE 80px 95px, 
+			#EEEEEE 110px 45px, 
+			#EEEEEE 90px 35px; 
+	}
+	25% {  
+	  	box-shadow: 
+			#EEEEEE 30px 45px,
+			#EEEEEE 40px 60px,
+			#EEEEEE 50px 90px,
+			#EEEEEE 55px 65px,
+			rgba(238,238,238,0) 70px 120px,
+			rgba(238,238,238,0) 80px 120px,
+			#EEEEEE 110px 70px,
+			#EEEEEE 90px 60px;
+	}
+	26% {  
+		box-shadow:
+			#EEEEEE 30px 45px,
+			#EEEEEE 40px 60px,
+			#EEEEEE 50px 90px,
+			#EEEEEE 55px 65px,
+			rgba(238,238,238,0) 70px 40px,
+			rgba(238,238,238,0) 80px 20px,
+			#EEEEEE 110px 70px,
+			#EEEEEE 90px 60px; 
+	}
+	50% { 
+		box-shadow:
+			#EEEEEE 30px 70px,
+			#EEEEEE 40px 80px,
+			rgba(238,238,238,0) 50px 100px,
+			#EEEEEE 55px 80px,
+			#EEEEEE 70px 60px,
+			#EEEEEE 80px 45px,
+			#EEEEEE 110px 95px,
+			#EEEEEE 90px 85px;
+	}
+	51% {
+		box-shadow:
+			#EEEEEE 30px 70px,
+			#EEEEEE 40px 80px,
+			rgba(238,238,238,0) 50px 45px,
+			#EEEEEE 55px 80px,
+			#EEEEEE 70px 60px,
+			#EEEEEE 80px 45px,
+			#EEEEEE 110px 95px,
+			#EEEEEE 90px 85px;
+	}
+	75% {
+		box-shadow:
+			#EEEEEE 30px 95px,
+			#EEEEEE 40px 100px,
+			#EEEEEE 50px 60px,
+			rgba(238,238,238,0) 55px 95px,
+			#EEEEEE 70px 80px,
+			#EEEEEE 80px 70px,
+			rgba(238,238,238,0) 110px 120px,
+			rgba(238,238,238,0) 90px 110px;
+	}
+	76% {
+		box-shadow:
+			#EEEEEE 30px 95px,
+			#EEEEEE 40px 100px,
+			#EEEEEE 50px 60px,
+			rgba(238,238,238,0) 55px 35px,
+			#EEEEEE 70px 80px,
+			#EEEEEE 80px 70px,
+			rgba(238,238,238,0) 110px 25px,
+			rgba(238,238,238,0) 90px 15px;
+	}
+	100% {
+		box-shadow:
+			rgba(238,238,238,0) 30px 120px,
+			rgba(238,238,238,0) 40px 120px,
+			#EEEEEE 50px 75px,
+			#EEEEEE 55px 50px,
+			#EEEEEE 70px 100px,
+			#EEEEEE 80px 95px,
+			#EEEEEE 110px 45px,
+			#EEEEEE 90px 35px;
+	}
+}
+
+body {
+	font-family: sans-serif;
+	background: #f5f5f5;
+	margin: 0;
+}
+h1 {
+	text-align: center;
+	font-weight: 400;
+	position: absolute;
+	width: 100%;
+  font-size: 15px;
+	top: 50%;
+	margin-top: -130px;
+  	opacity: .6;
+  	letter-spacing: 2px;
+}
+#fabrizio {
+	border-top: 100px solid black; 
+	border-right: 63px solid transparent;
+	width: 0;
+	transform: scale(.33);
+	transform-origin: 0 0;
+	margin: 20px;
+	opacity:.6;
+    display: none;
+}
+#fabrizio:before {
+	background: black;
+	width: 20px;
+	height: 30px;
+	content: '';
+	display: block;
+	transform: skewX(-32deg);
+	position: relative;
+	top: -64px;
+	left: 30px;
+}
+#fabrizio:after {
+	background: black;
+	width: 40px;
+	height: 36px;
+	content: '';
+	display: block;
+	transform: skewX(-32deg);
+	position: relative;
+	top: -130px;
+	left: 50px;
+}
+a { 
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  color: #777;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.container {
+	background: linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%, #E6E6E6 28.6%, #E6E6E6 42.9%, #F3D166 42.9%, #F3D166 57.2%, #222233 57.2%, #222233 71.5%, #444444 71.5%, #444444 85.8%, #85DB8C 85.8%);
+	transform: scale(.9);
+	width: 1200px;
+	position: absolute;
+	height: 210px;
+	left: 50%;
+	top: 50%;
+	margin: -65px -600px;
+}
+
+/* تُظهر رموزًا للعواصف والثلوج. هنا شرح للأجزاء الرئيسية في الكود:
+
+1. الجزء الأول يحتوي على تعريفات CSS لعنصر يمثل العاصفة (class "stormy") وتعريفات للرسوم المتحركة المرتبطة بها.
+2. الجزء الثاني يحتوي على تعريفات CSS لعنصر يمثل الثلج (class "snowy") وتعريفات للرسوم المتحركة المرتبطة بها.
+3. الجزء الأخير يحتوي على تعريفات CSS عامة لجسم الصفحة وعناصر الاستايل الأخرى.
+
+يرجى ملاحظة أن هذا الكود يستخدم الرسوم المتحركة بواسطة خاصية CSS Animation لإنشاء تأثيرات العاصفة والثلج. قد يتطلب استخدام الكود بشكل صحيح تضمينه في صفحة HTML وتحديد العناصر المطلوبة لتطبيق الأنماط عليها.
+ */
